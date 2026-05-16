@@ -1,0 +1,193 @@
+{
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.message.information.show": false,
+    "latex-workshop.latex.tools": [
+
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+
+        // Add this new single-run recipe at the top (so it's easy to select / becomes "first" if default=first)
+        {
+            "name": "pdflatex (single run)",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+            ]
+        },
+
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> biber -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    // "latex-workshop.latex.recipe.default": "xelatex",
+    "latex-workshop.latex.recipe.default": "pdflatex (single run)",
+    //"latex-workshop.latex.recipe.default": "pdflatex -> bibtex -> pdflatex*2",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 5000,
+    "latex-workshop.latex.clean.enabled": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "debug.console.wordWrap": false,
+    "editor.wordWrap": "off",
+    "window.zoomLevel": 2,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "editor.quickSuggestions": null,
+    "editor.hover.enabled": false,
+    "editor.parameterHints": false,
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.ref.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "C:/Users/SFL/AppData/Local/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "\"C:/Users/SFL/AppData/Local/Programs/Microsoft VS Code/Code.exe\" \"C:/Users/SFL/AppData/Local/Programs/Microsoft VS Code/resources/app/out/cli.js\" -gr \"%f\":\"%l\"",
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.external.synctex.command": "C:/Users/SFL/AppData/Local/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "\"C:/Users/SFL/AppData/Local/Programs/Microsoft VS Code/Code.exe\" \"C:/Users/SFL/AppData/Local/Programs/Microsoft VS Code/resources/app/out/cli.js\" -gr \"%f\":\"%l\"",
+        "%PDF%"
+    ],
+    "tabnine.experimentalAutoImports": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "always",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "json.schemas": [],
+    "python.condaPath": "D:\\programdata\\Miniconda3\\conda.exe",
+    "python.defaultInterpreterPath": "D:\\programdata\\Miniconda3\\python.exe",
+    "python.autoComplete.extraPaths": [],
+    "python.analysis.extraPaths": [],
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.sideBar.location": "right",
+    "explorer.confirmDelete": false,
+    "remote.SSH.remotePlatform": {
+        "192.168.1.13": "linux"
+    },
+    "workbench.editor.enablePreview": false,
+    "cursorpyright.analysis.extraPaths": [],
+    "remote.autoForwardPortsSource": "hybrid",
+    "notebook.lineNumbers": "on",
+    "jupyter.askForKernelRestart": false,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Monaco, Lucida, Consolas, 'Courier New', monospace",
+    "git.confirmSync": false,
+    "diffEditor.maxComputationTime": 0,
+    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+    "workbench.layoutControl.enabled": false,
+    "window.autoDetectColorScheme": false
+}
